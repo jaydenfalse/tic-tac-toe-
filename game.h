@@ -20,7 +20,7 @@ class Board{
     }
 
     void move(int row, int col, char sym) {
-        if (true = true) { //find a way to check if empty grid
+        if (check(row, col) == true) { //find a way to check if empty grid
             waffle[row][col] = sym;
             cellCount++;
         }
@@ -29,7 +29,14 @@ class Board{
         }
     }
 
-    bool checkCol{return true} //finish later
+    bool check(int row, int col){
+        if (waffle[row][col] == ' ') {
+            return true;
+        }
+        return false;
+    } 
+    
+    bool wonGame()[return true] //finish later
 
     private:
     int cellCount;
