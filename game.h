@@ -1,3 +1,8 @@
+#include "player.h"
+#include <iostream>
+#include <string>
+using namespace std;;
+
 class Board{
     public:
     Board(): cellCount(0) {
@@ -36,7 +41,18 @@ class Board{
         return false;
     } 
     
-    bool wonGame()[return true] //finish later
+    bool wonGame(char sym) const{
+        for (int i = 0; i < 3; ++i) {
+            if (grid[i][0] == sym && grid[i][1] == sym && grid[i][2] == sym) {return true }
+        }
+        for (int i = 0; i < 3; ++i) {
+            if (grid[0][i] == sym && grid[1][i] == sym && grid[2][i] == sym) {return true }
+        }
+
+        if (grid[0][0] == sym && grid[1][1] == sym && grid[2][2] == sym) {return true }
+        if (grid[2][0] == sym && grid[1][1] == sym && grid[0][2] == sym) {return true }
+        return false;
+    }
 
     private:
     int cellCount;
